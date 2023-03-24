@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Verify your email address</h2>
+  <p>A verification code has been sent to your email address. Please enter the code below:</p>
+  <form method="post">
+    {% csrf_token %}
+    <label for="verification_code">Verification code:</label>
+    <input type="text" id="verification_code" name="verification_code" required>
+    <button type="submit">Verify</button>
+  </form>
+{% endblock %}
